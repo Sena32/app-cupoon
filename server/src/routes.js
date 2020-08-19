@@ -1,11 +1,10 @@
-import { Router } from 'express';
-
+import { Router } from "express";
 const routes = new Router();
 
-routes.get('/', (req, res) => {
-    return res.json({ "message": "hello world2" });
-})
+import CuponController from "./app/controllers/CuponController";
+
+routes.get("/", CuponController.index);
+routes.post("/Cupons", CuponController.store);
+routes.put("/Cupons/:id", CuponController.update);
 
 export default routes;
-
-

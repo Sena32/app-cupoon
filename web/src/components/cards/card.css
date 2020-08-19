@@ -1,0 +1,104 @@
+.card {
+  margin: 0 1em 3em 0.5em;
+  background-color: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(22, 22, 22, 0.2);
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
+.card-small {
+  width: 250px;
+  height: 150px;
+  background-color: #fff;
+  align-items: center;
+}
+
+.card-active {
+  border-bottom: #9de000 solid 5px;
+  align-items: center;
+  color: #000;
+}
+
+.card-expired {
+  border-bottom: #fa4700 solid 5px;
+  align-items: center;
+  color: #fa4700;
+}
+
+.card-utilized {
+  border-bottom: #ddd solid 5px;
+  align-items: center;
+  color: #000;
+}
+.card-detail .phoneItem li a {
+  color: #000;
+}
+
+.card-description {
+  margin: 0 0 2em 0;
+  width: 100%;
+}
+
+.card-large {
+  width: 600px;
+  height: 450px;
+  background-color: #ffe7b6;
+  align-items: center;
+  justify-content: center;
+}
+
+.small {
+  max-width: 60%;
+  max-height: 70%;
+  padding: 15px;
+  width: auto;
+  height: auto;
+}
+
+.large {
+  max-width: 70%;
+  max-height: 80%;
+  padding: 15px;
+  width: auto;
+  height: auto;
+}
+
+.card-content {
+  padding: 1.2em;
+  width: 100%;
+  min-height: 6em;
+  margin-bottom: 50px;
+}
+
+.card--actions {
+  border-top: 1px solid rgb(231, 230, 230);
+  display: flex;
+  padding: 8px;
+  justify-content: flex-end;
+}
+.card-content-overlay {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.card--actions-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  align-items: flex-end;
+  justify-content: center !important;
+}
+
+.card h2 {
+  margin-left: 1rem;
+  color: #00913d;
+}

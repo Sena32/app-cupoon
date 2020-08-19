@@ -1,16 +1,15 @@
-'use strict';
+"use strict";
 
 const sequelize = require("sequelize");
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-
-    await queryInterface.createTable('cupons', {
+    await queryInterface.createTable("Cupons", {
       id: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         autoIncrement: true,
-        primaryKey: true
+        primaryKey: true,
       },
       code: {
         type: Sequelize.DataTypes.STRING,
@@ -25,18 +24,17 @@ module.exports = {
         type: Sequelize.DataTypes.DECIMAL,
         allowNull: false,
       },
-      expirationDate: {
+      expiration_date: {
         type: Sequelize.DataTypes.DATE,
         allowNull: false,
       },
-      useDate: {
+      use_date: {
         type: Sequelize.DataTypes.DATE,
         allowNull: false,
       },
       status: {
-        type: Sequelize.DataTypes.ENUM,
-        values: ['active', 'expired', 'utilized'],
-        defaultValue: 'active',
+        type: Sequelize.DataTypes.ENUM("active", "expired", "utilized"),
+        defaultValue: "active",
       },
       created_at: {
         type: Sequelize.DataTypes.DATE,
@@ -45,14 +43,11 @@ module.exports = {
       updated_at: {
         type: Sequelize.DataTypes.DATE,
         allowNull: false,
-      }
+      },
     });
-
   },
 
   down: async (queryInterface) => {
-
-    await queryInterface.dropTable('cupons');
-
-  }
+    await queryInterface.dropTable("Cupons");
+  },
 };

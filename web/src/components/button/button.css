@@ -1,0 +1,68 @@
+/*Button*/
+.btn {
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+  transition: all 0.5s ease;
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 4px;
+  margin-right: 2px;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.btn:hover {
+  background-color: #eee;
+}
+
+.btn-small {
+  font-size: 1rem;
+  width: 200px;
+}
+
+.btn-large {
+  font-size: 1rem;
+  width: 215px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #ffae00;
+  transition: all 1.5s;
+}
+
+.btn-primary:hover {
+  background-color: rgb(255, 217, 0);
+}
+
+.btn-paginate {
+  color: #00913d;
+  background-color: #fff;
+  border: solid 2px #00913d;
+  margin: 5px;
+  transition: all 0.5s;
+}
+
+.btn-paginate:hover {
+  background-color: #00913d;
+  color: #fff;
+}
+
+button[disabled] {
+  opacity: 0.5;
+  border: solid 2px #c0c0c0;
+  color: #8d8d8d;
+}
+
+button[disabled]:hover {
+  cursor: default;
+  background-color: #fff;
+  color: #8d8d8d;
+  opacity: 0.5;
+  border: solid 2px #c0c0c0;
+}

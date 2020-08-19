@@ -1,37 +1,36 @@
-version: '3'
+version: "3"
 
 services:
-
-  node:
-    container_name: api
-    build: '.'
+  app:
+    build: .
     volumes:
-      - .:/home/node/api
-      - /home/node/api/node_modules
+      - .:/opt/app
+      - /opt/app/node_modules
+    ports:
+      - 3333:3333
     depends_on:
       - postgres
-    networks:
-      - app-connect
-    ports:
-      - '3000:3000'
+    #command: ./wait-for.sh db:5432 -- /opt/app/node_modules/.bin/nodemon src/server.js
+    command: ./wait-for.sh postgres:5432 -- ./init.sh
 
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 1234:8080
 
   postgres:
-    container_name: postgres-db
-    image: postgres:11
-    restart: unless-stopped
+    container_name: postgres
+    image: postgres
+    #command: --default-authentication-plugin=mysql_native_password
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: cupoon-db
+
     volumes:
-      - postgres-db-data:/data
-    environment: 
-      POSTGRES_DB: ${DB_NAME}
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASS} 
-    networks:
-      - app-connect
+      - db:/var/lib/data
 
 volumes:
-  postgres-db-data:
-
-networks:
-  app-connect:
-      driver: bridge
+  db:
+    driver: local
