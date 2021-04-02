@@ -10,6 +10,8 @@ services:
       - 3333:3333
     depends_on:
       - postgres
+    links:
+      - postgres
     #command: ./wait-for.sh db:5432 -- /opt/app/node_modules/.bin/nodemon src/server.js
     command: ./wait-for.sh postgres:5432 -- ./init.sh
 
@@ -17,7 +19,7 @@ services:
     image: adminer
     restart: always
     ports:
-      - 1234:8080
+      - 8080:8080
 
   postgres:
     container_name: postgres

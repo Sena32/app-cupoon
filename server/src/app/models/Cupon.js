@@ -1,6 +1,11 @@
 import Sequelize, { Model } from "sequelize";
 
 class Cupon extends Model {
+
+  static associate(models) {
+    // define association here
+    Cupon.User = Cupon.belongsTo(models.User, {foreignKey: 'userId', as: 'user'});
+  }
   static init(sequelize) {
     super.init(
       {
@@ -14,9 +19,12 @@ class Cupon extends Model {
       {
         sequelize,
         tableName: "Cupons",
+        modelName: "Cupon"
       }
     );
   }
 }
+
+
 
 export default Cupon;
