@@ -11,6 +11,8 @@ WORKDIR /opt/app
 COPY package*.json ./
 
 RUN npm install
+
+RUN npm sequelize db:migrate
 #RUN apt-get -q update && apt-get -qy install netcat
 #RUN chmod +x ./wait-for.sh
 # If you are building your code for production
@@ -21,4 +23,4 @@ COPY . .
 
 EXPOSE 3333
 #CMD [ "npm", "start" ]
-#CMD sh -c './wait-for.sh db:5432 -- npm start'
+CMD sh -c './wait-for.sh ec2-34-195-233-155.compute-1.amazonaws.com:5432 -- npm start'
