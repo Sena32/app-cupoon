@@ -3,8 +3,8 @@ App developed for challenge and studies.
 
 #### Monorepo
 
--   [ ] [Front-End]()
--   [ ] [Back-End]()
+-   [ ] [Front-End](/web)
+-   [ ] [Back-End](/server)
 <!-- ## ✨ Stack
 
 -   [ ] React
